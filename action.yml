@@ -60,7 +60,7 @@ inputs:
   module-version:
     description: The version of the PowerShell module Ghost to use. The default is the version this action was tested with.
     required: false
-    default: '0.6.1'
+    default: '0.8.0'
   module-path:
     description: The folder of a copy of the module Ghost to use, instead of a version from the PowerShell Gallery.
     required: false
@@ -86,8 +86,6 @@ outputs:
 runs:
   using: composite
   steps:
-    # A composite action does not get its inputs by itself. They are passed as environment variables, which
-    # also keeps their text out of the script that the runner writes for this step.
     - name: Deploy to Ghost
       id: deploy
       shell: pwsh
